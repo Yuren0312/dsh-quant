@@ -8,6 +8,7 @@
  *   → factor eval（因子检验）→ backtest + grid（策略验证）→ 结论
  */
 import { Context } from '@deepseek-ai/cordis'
+import { ToolCallId } from '@deepseek-ai/dsh-llm'
 import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
 import ToolRuntime from '@deepseek-ai/dsh-tools'
 import { apply } from '../src/index.ts'
@@ -17,8 +18,18 @@ await ctx.plugin(SystemPrompt)
 await ctx.plugin(ToolRuntime)
 await ctx.plugin({ name: 'dsh-quant', inject: ['tools'], apply })
 const signal = new AbortController().signal
-const call = (name: string, args: Record<string, unknown>) =>
-  ctx.tools.execute({ callId: `demo-${name}`, name, arguments: args, signal })
+
+/** dsh-tools 0.2.x：execute 接受品牌化 ToolCallId，成功值是规范 JsonValue；按工具输出契约为 value 开一个宽松视图。 */
+interface QuantCallResult {
+  isError: boolean
+  error?: { message: string }
+  value: any
+}
+
+const call = async (name: string, args: Record<string, unknown>): Promise<QuantCallResult> => {
+  const r = await ctx.tools.execute({ callId: ToolCallId(`demo-${name}`), name, arguments: args, signal })
+  return { isError: r.isError, error: r.error, value: r.isError ? undefined : r.value }
+}
 
 const section = (title: string) => console.log(`\n━━━ ${title} ━━━`)
 

@@ -11,6 +11,7 @@
  *   cd deepseek-harness && pnpm exec tsx ../quant-indicators/consumer-test/boot.ts
  */
 import { Context } from '@deepseek-ai/cordis'
+import { ToolCallId } from '@deepseek-ai/dsh-llm'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
 import { pathToFileURL } from 'node:url'
@@ -19,29 +20,30 @@ const ctx = new Context()
 ctx.baseUrl = new URL('.', import.meta.url).href
 await ctx.plugin(Loader)
 ctx.loader.builtins.include = Include
+// dsh-tools 0.2.x 的 Loader 内部模块映射仍是 v2 形状；按官方测试同样的断言装配
 ctx.loader.internal = {
   version: 'v2',
   async import(specifier: string) {
     // 真实 Node 解析：从本文件所在目录的 node_modules 链
     return import(specifier)
   },
-}
+} as unknown as NonNullable<typeof ctx.loader.internal>
 await ctx.loader.create({ name: 'cordis:include', config: { path: new URL('./cordis.yml', import.meta.url).href } })
 await ctx.loader.await()
 
 console.log('✅ Loader booted via real node_modules resolution')
 const names = ctx.tools.schemas().map(s => s.name).sort()
 console.log('tools:', names.join(', '))
-if (names.length !== 34) throw new Error(`expected 34 tools, got ${names.length}`)
+if (names.length !== 59) throw new Error(`expected 59 tools, got ${names.length}`)
 
 const r = await ctx.tools.execute({
-  callId: 'consumer-1',
+  callId: ToolCallId('consumer-1'),
   name: 'quant_sma',
   arguments: { values: [1, 2, 3, 4, 5], window: 3 },
   signal: new AbortController().signal,
 })
 console.log('quant_sma →', JSON.stringify(r.value))
-if (r.isError || JSON.stringify(r.value.values) !== JSON.stringify([null, null, 2, 3, 4])) {
+if (r.isError || JSON.stringify((r.value as { values: (number | null)[] }).values) !== JSON.stringify([null, null, 2, 3, 4])) {
   throw new Error('quant_sma result mismatch')
 }
 
