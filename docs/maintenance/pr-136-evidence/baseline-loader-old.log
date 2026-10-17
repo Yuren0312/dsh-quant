@@ -1,0 +1,12 @@
+✔ real Loader composition: 59 tools register and are model-visible (70.144608ms)
+✔ real Loader composition: quant_sma executes through the full pipeline (28.451907ms)
+✔ real Loader composition: invalid args fail through the isError path (26.666533ms)
+✔ real Loader composition: disposal removes the registered tools (HMR-safety) (27.614377ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 440.332354

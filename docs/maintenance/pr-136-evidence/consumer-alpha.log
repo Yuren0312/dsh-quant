@@ -1,0 +1,7 @@
+==> packing dsh-quant
+    tarball: dsh-quant-0.91.0.tgz
+==> installing into scratch consumer dir
+==> verifying consumer usage
+sma([1,2,3,4,5],3) = [null,null,2,3,4]
+export count: 88
+consumer test: OK

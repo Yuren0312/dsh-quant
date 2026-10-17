@@ -1,0 +1,8 @@
+sma(1000, 20) x100               0.095 ms
+sma(10000, 20) x100              0.164 ms
+ema(10000, 20) x100              0.137 ms
+rsi(10000, 14) x100              0.382 ms
+macd(10000, 12/26/9) x100        1.254 ms
+---
+slowest case: 1.254 ms
+bench smoke: OK
