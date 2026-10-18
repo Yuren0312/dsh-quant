@@ -14,6 +14,8 @@ import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, test } from 'node:test'
 import { Context } from '@deepseek-ai/cordis'
+// Call IDs are strings at runtime. Derive the brand from execute so 0.1.x
+// does not import the ToolCallId value introduced in 0.2.x.
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
 import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
@@ -84,7 +86,7 @@ test('real Loader composition: quant_sma executes through the full pipeline', as
   const ctx = await boot()
   const result = await ctx.tools.execute({
     signal: new AbortController().signal,
-    callId: 'loader-sma',
+    callId: 'loader-sma' as Parameters<typeof ctx.tools.execute>[0]['callId'],
     name: 'quant_sma',
     arguments: { values: [1, 2, 3, 4, 5], window: 3 },
   })
@@ -96,7 +98,7 @@ test('real Loader composition: invalid args fail through the isError path', asyn
   const ctx = await boot()
   const result = await ctx.tools.execute({
     signal: new AbortController().signal,
-    callId: 'loader-bad',
+    callId: 'loader-bad' as Parameters<typeof ctx.tools.execute>[0]['callId'],
     name: 'quant_sma',
     arguments: { values: [1, 2, 3], window: 0 },
   })

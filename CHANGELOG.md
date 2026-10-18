@@ -7,10 +7,46 @@ All notable changes to this project are documented here. The format follows
 ## [Unreleased]
 
 ### Fixed
+- Complete the compatibility work contributed by **@hufeide** in #136 for
+  DSH 0.2.1-rc.2 (reported by **@ziladan** in #139 / #140): declare
+  `engines.dsh`, retain the widened peer ranges, remove new-only call-ID
+  imports from scripts, bound Loader/Include development ranges, and refresh
+  the lock to the published RC package family from registry.npmjs.org.
+  Add four pinned host cohorts and packed-Loader consumer checks in CI.
+- Compatibility with deepseek-harness 0.2.x (`@deepseek-ai/dsh-tools` /
+  `@deepseek-ai/dsh-system-prompt` 0.2.1-alpha.x, `@deepseek-ai/cordis` 4.0.5-alpha.x):
+  - `package.json`: peer/dev dependency ranges widened from the 0.1.x-only
+    `^0.1.0-rc.5` / `^4.0.0` to `^0.1.0-rc.5 || >=0.2.1-alpha.2 <0.3.0` and
+    `^4.0.0 || >=4.0.5-alpha.1 <5.0.0` so a 0.2.x host no longer reports unmet
+    peers (and keeps resolving the host's shared package instances); stale
+    `package-lock.json` (0.1.x tree) regenerated
+  - `ctx.tools.execute` now takes a branded `ToolCallId` and returns the
+    canonical `JsonValue` on success: `verify.ts`, `demos/rd-workflow.ts`,
+    `demos/gen-ui-demo-data.ts`, `consumer-test/boot.ts` and
+    `tests/loader-composition.spec.ts` brand call ids through
+    the runtime-derived call-ID type (no new-version-only runtime import) and read
+    `value` through a per-call narrowed view
+  - `consumer-test/boot.ts`: `ctx.loader.internal` assembled with the same
+    `as unknown as NonNullable<typeof ctx.loader.internal>` assertion the
+    current harness tests use
+  - `verify.ts` / `consumer-test/boot.ts`: tool-count expectations refreshed
+    to the current 59 registered tools
+- Compatibility extended to the dsh 0.2.0-rc.x line (`dsh-tools` /
+  `dsh-system-prompt` 0.2.0-rc.2, `cordis` 4.0.4): peer ranges now read
+  `^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0`; verified by
+  building, typechecking, and running the full unit + loader-composition
+  suites against registry 0.2.0-rc.2 packages (227/227 pass), in addition to
+  the 0.2.1-alpha.x line
+
 - Correct Kupiec POF zero/all-exceedance likelihood boundaries, p-values and
   sample-dependent decisions in `quant_var_backtest` (#137). Reject non-finite
   inputs and invalid confidence; preserve finite numeric JSON output. Evaluate
   the chi-square right tail directly and use the full 5% critical value.
+
+### Notes
+- Compatibility changes do not alter shipped `src/` math or tool behavior.
+  #135/#138 and #137/#141 remain independently committed fixes.
+  Validation does not imply an npm release.
 
 ## [0.91.0] - 2026-09-11
 

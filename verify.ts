@@ -6,6 +6,8 @@
  *   pnpm exec tsx ../quant-indicators/verify.ts
  */
 import { Context } from '@deepseek-ai/cordis'
+// Call IDs are strings at runtime. Derive the brand from execute so 0.1.x
+// does not import the ToolCallId value introduced in 0.2.x.
 import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
 import ToolRuntime from '@deepseek-ai/dsh-tools'
 import { apply as applyQuantTools } from './src/index.ts'
@@ -16,8 +18,22 @@ await ctx.plugin(ToolRuntime)
 await ctx.plugin({ name: 'dsh-quant', inject: ['tools'], apply: applyQuantTools })
 
 const signal = new AbortController().signal
-const call = (name: string, args: Record<string, unknown>) =>
-  ctx.tools.execute({ callId: `q-${name}`, name, arguments: args, signal })
+
+/**
+ * dsh-tools 0.2.x：`ctx.tools.execute` 接受品牌化的 `ToolCallId`，成功值是
+ * 规范 `JsonValue`。验证脚本按每个工具自己的输出契约读字段，统一在调用边界
+ * 收窄成一个宽松视图；isError / error 语义不变。
+ */
+interface QuantCallResult {
+  isError: boolean
+  error?: { message: string }
+  value: any
+}
+
+const call = async (name: string, args: Record<string, unknown>): Promise<QuantCallResult> => {
+  const r = await ctx.tools.execute({ callId: `q-${name}` as Parameters<typeof ctx.tools.execute>[0]['callId'], name, arguments: args, signal })
+  return { isError: r.isError, error: r.error, value: r.isError ? undefined : r.value }
+}
 
 // 多交易所 fallback：地区封锁时自动切换 provider（resilience 实测：Binance 451 / Bybit CloudFront）
 async function fetchWithFallback(symbol: string, interval: string, limit: number) {
@@ -32,7 +48,7 @@ async function fetchWithFallback(symbol: string, interval: string, limit: number
 const names = ctx.tools.schemas().map(s => s.name).sort()
 console.log('=== schemas() ===')
 console.log(names.join(', '))
-if (names.length !== 46) throw new Error(`expected 46 tools, got ${names.length}`)
+if (names.length !== 59) throw new Error(`expected 59 tools, got ${names.length}`)
 
 // 2) 数值正确性（已知答案）
 console.log('\n=== numeric correctness ===')
@@ -101,7 +117,7 @@ assert(!market.isError, 'live fetch should succeed')
 assert(market.value.candles.length === 5, 'expected 5 candles')
 assert(market.value.candles[0].openTime > 0 && market.value.candles[0].close > 0, 'candle fields sane')
 // 链路验证：fetch 的 close 喂给 quant_sma
-const closes = market.value.candles.map(c => c.close)
+const closes = market.value.candles.map((c: { close: number }) => c.close)
 const chained = await call('quant_sma', { values: closes, window: 3 })
 console.log('fetch→sma chain: isError:', chained.isError, '| value:', JSON.stringify(chained.value))
 assert(!chained.isError && chained.value.values.length === 5, 'fetch→sma chain should work')
@@ -118,7 +134,7 @@ assert(bad8.isError, 'limit out of range must be an error')
 console.log('\n=== quant_backtest (real data end-to-end) ===')
 const history = await fetchWithFallback('BTCUSDT', '1d', 120)
 assert(!history.isError, 'history fetch should succeed')
-const btCloses = history.value.candles.map(c => c.close)
+const btCloses = history.value.candles.map((c: { close: number }) => c.close)
 const bt = await call('quant_backtest', { close: btCloses, fast: 5, slow: 20, feeRate: 0.001 })
 console.log('backtest:        isError:', bt.isError, '|', JSON.stringify(bt.value))
 assert(!bt.isError, 'backtest should succeed')
@@ -127,7 +143,7 @@ assert(Number.isFinite(bt.value.totalReturnPct) && Number.isFinite(bt.value.maxD
 // 端到端链路：fetch → 指标 → 回测全部串起来
 const e2eEma = await call('quant_ema', { values: btCloses, window: 20 })
 assert(!e2eEma.isError, 'ema on fetched closes should work')
-console.log('full chain:      fetch(120) → backtest ✓ | ema(20) first-non-null:', JSON.stringify(e2eEma.value.values.find(v => v !== null)?.toFixed(2)))
+console.log('full chain:      fetch(120) → backtest ✓ | ema(20) first-non-null:', JSON.stringify(e2eEma.value.values.find((v: number | null) => v !== null)?.toFixed(2)))
 
 // 6) quant_backtest_grid（真实行情 → 参数网格搜索）
 console.log('\n=== quant_backtest_grid (real data) ===')
@@ -144,9 +160,9 @@ assert(bad9.isError, 'invalid grid range must be an error')
 
 // 7) 新指标（真实 BTC 数据链路）
 console.log('\n=== new indicators (real data) ===')
-const highs = history.value.candles.map(c => c.high)
-const lows = history.value.candles.map(c => c.low)
-const vols = history.value.candles.map(c => c.volume)
+const highs = history.value.candles.map((c: { high: number }) => c.high)
+const lows = history.value.candles.map((c: { low: number }) => c.low)
+const vols = history.value.candles.map((c: { volume: number }) => c.volume)
 const kdjR = await call('quant_kdj', { high: highs, low: lows, close: btCloses, window: 9 })
 const cciR = await call('quant_cci', { high: highs, low: lows, close: btCloses, window: 20 })
 const obvR = await call('quant_obv', { close: btCloses, volume: vols })
@@ -167,8 +183,8 @@ const mcSl = await call('quant_backtest', { close: btCloses, fast: 5, slow: 20, 
 assert(!bb.isError && !rs.isError && !mcSl.isError, 'strategy backtests should succeed')
 console.log('bollinger:       trades:', bb.value.trades.length, '| total:', bb.value.totalReturnPct.toFixed(2) + '%')
 console.log('rsi-reversion:   trades:', rs.value.trades.length, '| total:', rs.value.totalReturnPct.toFixed(2) + '%')
-console.log('ma-cross +stop:  trades:', mcSl.value.trades.length, '| reasons:', JSON.stringify(mcSl.value.trades.map(t => t.exitReason)))
-assert(mcSl.value.trades.every(t => ['signal', 'stop_loss', 'take_profit', null].includes(t.exitReason)), 'exitReason vocabulary')
+console.log('ma-cross +stop:  trades:', mcSl.value.trades.length, '| reasons:', JSON.stringify(mcSl.value.trades.map((t: { exitReason: string | null }) => t.exitReason)))
+assert(mcSl.value.trades.every((t: { exitReason: string | null }) => ['signal', 'stop_loss', 'take_profit', null].includes(t.exitReason)), 'exitReason vocabulary')
 
 
 // 9) 组合回测（真实双资产 BTC+ETH）
@@ -176,7 +192,7 @@ console.log('\n=== portfolio (real data) ===')
 const ethRes = await fetchWithFallback('ETHUSDT', '1d', 120)
   const eth = ethRes
   assert(!eth.isError, 'eth fetch should succeed')
-const ethCloses = eth.value.candles.map(c => c.close)
+const ethCloses = eth.value.candles.map((c: { close: number }) => c.close)
 const pf = await call('quant_backtest_portfolio', {
   assets: [{ name: 'BTC', close: btCloses }, { name: 'ETH', close: ethCloses }],
   weights: [0.6, 0.4],
@@ -185,7 +201,7 @@ const pf = await call('quant_backtest_portfolio', {
 })
 assert(!pf.isError, 'portfolio should succeed')
 console.log('btc+eth 60/40:   total:', pf.value.totalReturnPct.toFixed(2) + '%', '| maxDD:', pf.value.maxDrawdownPct.toFixed(2) + '%', '| rebalances:', pf.value.rebalances)
-console.log('final weights:  ', JSON.stringify(pf.value.finalWeights.map(x => x.toFixed(3))))
+console.log('final weights:  ', JSON.stringify(pf.value.finalWeights.map((x: number) => x.toFixed(3))))
 assert(pf.value.equityCurve.length === 120 && pf.value.rebalances >= 3, 'portfolio shape')
 
 
@@ -194,14 +210,14 @@ console.log('\n=== multi-exchange (real data) ===')
 const okx = await call('quant_market_fetch', { symbol: 'BTCUSDT', interval: '1d', limit: 5, provider: 'okx' })
 assert(!okx.isError, 'okx should succeed')
 assert(okx.value.candles[0].openTime < okx.value.candles[4].openTime, 'okx ascending order')
-console.log('okx BTC close:  ', okx.value.candles.map(c => c.close).join(', '))
+console.log('okx BTC close:  ', okx.value.candles.map((c: { close: number }) => c.close).join(', '))
 const byb = await call('quant_market_fetch', { symbol: 'BTCUSDT', interval: '1d', limit: 5, provider: 'bybit' })
 if (!byb.isError) {
   assert(byb.value.candles[0].openTime < byb.value.candles[4].openTime, 'bybit ascending order')
   const lastOkx = okx.value.candles[4].close
   const lastByb = byb.value.candles[4].close
   assert(Math.abs(lastOkx - lastByb) / lastByb < 0.02, `cross-exchange close mismatch: okx ${lastOkx} vs bybit ${lastByb}`)
-  console.log('bybit BTC close:', byb.value.candles.map(c => c.close).join(', '), '| cross-check ok')
+  console.log('bybit BTC close:', byb.value.candles.map((c: { close: number }) => c.close).join(', '), '| cross-check ok')
 } else {
   console.log('bybit blocked in this region — skipped cross-check (okx primary works)')
 }
@@ -222,15 +238,15 @@ assert(g3.value.results.length === 1 && g3.value.results[0].category === 'python
 const g4 = await call('quant_data_guide', { channel: 'nope' })
 assert(g4.isError, 'unknown channel must be an error')
 console.log('guide "tushare":', g1.value.results[0].displayName, '| cost:', g1.value.results[0].cost.slice(0, 24), '…')
-console.log('guide "财务" hits:', g2.value.results.map(r => r.name).join(', '))
+console.log('guide "财务" hits:', g2.value.results.map((r: { name: string }) => r.name).join(', '))
 
 
 // 14) 因子评估（真实 BTC 数据：ROC 因子 → 未来收益）
 console.log('\n=== factor eval (real data) ===')
 const rocR = await call('quant_roc', { values: btCloses, window: 10 })
 assert(!rocR.isError, 'roc should succeed')
-const rocVals = rocR.value.values.filter(v => v !== null)
-const rets = btCloses.slice(1).map((c, i) => c / btCloses[i] - 1)
+const rocVals = rocR.value.values.filter((v: number | null) => v !== null)
+const rets = btCloses.slice(1).map((c: number, i: number) => c / btCloses[i]! - 1)
 // ROC 有效区间：原始 index 10..119（110 个）；rets 原始 index 0..118（119 个）
 // 对齐：rocVals[i]（原始 index 10+i）预测 rets[10+i]（原始 index 10+i 的下一期）
 const fe = await call('quant_factor_evaluate', {
@@ -243,7 +259,7 @@ assert(!fe.isError, 'factor eval should succeed')
 console.log('ROC factor:      IC', fe.value.ic.toFixed(4), '| ICIR', fe.value.icir.toFixed(3), '| longShort', fe.value.longShort.toFixed(4), '| turnover', fe.value.turnover.toFixed(3))
 const fc = await call('quant_factor_combine', { factors: [[1, 2, 3, 4, 5], [5, 4, 3, 2, 1]] })
 assert(!fc.isError && fc.value.signal.length === 5, 'factor combine should succeed')
-console.log('combine demo:    signal', JSON.stringify(fc.value.signal.map(x => x.toFixed(3))))
+console.log('combine demo:    signal', JSON.stringify(fc.value.signal.map((x: number) => x.toFixed(3))))
 
 
 // 15) chart 数据面（真实数据：K线+均线叠加 / 回测净值+标记 / 标注图）
@@ -253,7 +269,7 @@ const c1 = await call('quant_chart', {
   kind: 'candles', title: 'BTCUSDT with SMA20',
   candles: history.value.candles,
   overlays: [{ name: 'SMA20', values: sma20.value.values }],
-  markers: bt.value.trades.filter(t => t.exitIndex !== null).map(t => ({ index: t.entryIndex, kind: 'entry' })),
+  markers: bt.value.trades.filter((t: { exitIndex: number | null; entryIndex: number }) => t.exitIndex !== null).map((t: { entryIndex: number }) => ({ index: t.entryIndex, kind: 'entry' })),
 })
 assert(!c1.isError, 'candles chart should succeed')
 assert(c1.value.candles.length === 120 && c1.value.overlays[0].values.length === 120, 'chart shape')
@@ -287,7 +303,7 @@ assert(fund.value.navNet.length === 120, 'nav series length')
 
 // 18) 风险指标（真实 BTC 收益 + 因子基准）
 console.log('\n=== risk (real data) ===')
-const riskRets = btCloses.slice(1).map((c, i) => c / btCloses[i] - 1)
+const riskRets = btCloses.slice(1).map((c: number, i: number) => c / btCloses[i]! - 1)
 const rk = await call('quant_risk', { returns: riskRets, confidence: 0.95 })
 assert(!rk.isError, 'risk should succeed')
 console.log('risk:            VaR95', (rk.value.var95 * 100).toFixed(2) + '%', '| CVaR95', (rk.value.cvar95 * 100).toFixed(2) + '%', '| maxDD', rk.value.maxDrawdownPct.toFixed(2) + '%', '| downDev', (rk.value.downsideDeviation * 100).toFixed(2) + '%')
@@ -368,7 +384,7 @@ const ex = await call('quant_execute_sim', {
 })
 assert(!ex.isError && ex.value.tradeCount === 2, 'execute sim should fill both orders')
 console.log('execute sim:     ', ex.value.tradeCount, 'fills | return', ex.value.totalReturnPct.toFixed(2) + '%', '| fees', ex.value.totalFee.toFixed(2), '| slippage', ex.value.totalSlippageCost.toFixed(2))
-const rets2 = btCloses.slice(1).map((c, i) => c / btCloses[i]! - 1)
+const rets2 = btCloses.slice(1).map((c: number, i: number) => c / btCloses[i]! - 1)
 const wf = await call('quant_walk_forward', {
   returns: [0, ...rets2],
   features: [[0, ...rets2]], // features[t] = returns[t] → 完美线性，OOS IC 应 ≈ 1

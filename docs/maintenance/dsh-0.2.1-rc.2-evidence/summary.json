@@ -1,0 +1,317 @@
+{
+  "base": "6a444c21a651a2537e721e4bda7a04292c54b5b6",
+  "contributor_head": "633ba45fa96063d0cc746c6618b28dfadba59908",
+  "node": "24.19.0",
+  "npm": "11.9.0",
+  "results": {
+    "candidate-old": {
+      "build": {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "exit": 0
+      },
+      "typecheck": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck"
+        ],
+        "exit": 0
+      },
+      "script-types": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck:scripts"
+        ],
+        "exit": 0
+      },
+      "tests": {
+        "command": [
+          "node",
+          "--import",
+          "tsx",
+          "--test",
+          "--test-reporter=tap",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/backtest.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/bond.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/chart.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/community.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/data-guide.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/decay-optimizer.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/drawdown.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/execute.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/factor-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/factor-neutralize.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/factor.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/indicators-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/indicators.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/layered-attribution.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/linear.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/loader-composition.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/market-sina.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/market-yahoo.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/market.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/metrics-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/metrics.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/options.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/pipeline.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/quality.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/risk-kupiec.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/risk.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/stats.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/strategies.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/trading-cost-rebalance.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/transform.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/validation-tools.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/var-backtest-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-old/tests/walkforward.spec.ts"
+        ],
+        "exit": 0
+      },
+      "smoke": {
+        "command": [
+          "npm",
+          "run",
+          "test:compat"
+        ],
+        "exit": 0
+      }
+    },
+    "candidate-alpha": {
+      "build": {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "exit": 0
+      },
+      "typecheck": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck"
+        ],
+        "exit": 0
+      },
+      "script-types": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck:scripts"
+        ],
+        "exit": 0
+      },
+      "tests": {
+        "command": [
+          "node",
+          "--import",
+          "tsx",
+          "--test",
+          "--test-reporter=tap",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/backtest.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/bond.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/chart.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/community.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/data-guide.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/decay-optimizer.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/drawdown.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/execute.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/factor-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/factor-neutralize.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/factor.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/indicators-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/indicators.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/layered-attribution.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/linear.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/loader-composition.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/market-sina.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/market-yahoo.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/market.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/metrics-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/metrics.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/options.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/pipeline.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/quality.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/risk-kupiec.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/risk.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/stats.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/strategies.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/trading-cost-rebalance.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/transform.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/validation-tools.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/var-backtest-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-alpha/tests/walkforward.spec.ts"
+        ],
+        "exit": 0
+      },
+      "smoke": {
+        "command": [
+          "npm",
+          "run",
+          "test:compat"
+        ],
+        "exit": 0
+      }
+    },
+    "candidate-rc020": {
+      "build": {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "exit": 0
+      },
+      "typecheck": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck"
+        ],
+        "exit": 0
+      },
+      "script-types": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck:scripts"
+        ],
+        "exit": 0
+      },
+      "tests": {
+        "command": [
+          "node",
+          "--import",
+          "tsx",
+          "--test",
+          "--test-reporter=tap",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/backtest.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/bond.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/chart.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/community.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/data-guide.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/decay-optimizer.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/drawdown.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/execute.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/factor-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/factor-neutralize.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/factor.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/indicators-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/indicators.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/layered-attribution.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/linear.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/loader-composition.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/market-sina.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/market-yahoo.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/market.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/metrics-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/metrics.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/options.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/pipeline.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/quality.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/risk-kupiec.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/risk.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/stats.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/strategies.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/trading-cost-rebalance.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/transform.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/validation-tools.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/var-backtest-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/candidate-rc020/tests/walkforward.spec.ts"
+        ],
+        "exit": 0
+      },
+      "smoke": {
+        "command": [
+          "npm",
+          "run",
+          "test:compat"
+        ],
+        "exit": 0
+      }
+    },
+    "compat-136": {
+      "build": {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "exit": 0
+      },
+      "typecheck": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck"
+        ],
+        "exit": 0
+      },
+      "script-types": {
+        "command": [
+          "npm",
+          "run",
+          "typecheck:scripts"
+        ],
+        "exit": 0
+      },
+      "tests": {
+        "command": [
+          "node",
+          "--import",
+          "tsx",
+          "--test",
+          "--test-reporter=tap",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/backtest.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/bond.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/chart.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/community.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/data-guide.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/decay-optimizer.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/drawdown.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/execute.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/factor-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/factor-neutralize.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/factor.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/indicators-extra.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/indicators.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/layered-attribution.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/linear.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/loader-composition.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/market-sina.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/market-yahoo.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/market.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/metrics-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/metrics.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/options.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/pipeline.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/quality.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/risk-kupiec.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/risk.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/stats.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/strategies.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/trading-cost-rebalance.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/transform.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/validation-tools.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/var-backtest-runtime.spec.ts",
+          "/workspace/scratch/cbdfdd85dd02/compat-136/tests/walkforward.spec.ts"
+        ],
+        "exit": 0
+      },
+      "smoke": {
+        "command": [
+          "npm",
+          "run",
+          "test:compat"
+        ],
+        "exit": 0
+      }
+    }
+  },
+  "raw_results_sha256": "ee1f4bfcc1c6a84df526673bbdef51f8ec293fbd375b2c8acc7536c965adaabb"
+}
