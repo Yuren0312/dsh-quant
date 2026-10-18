@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows
 [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- Correct Kupiec POF zero/all-exceedance likelihood boundaries, p-values and
+  sample-dependent decisions in `quant_var_backtest` (#137). Reject non-finite
+  inputs and invalid confidence; preserve finite numeric JSON output. Evaluate
+  the chi-square right tail directly and use the full 5% critical value.
+
 ## [0.91.0] - 2026-09-11
 
 ### Changed

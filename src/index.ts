@@ -2112,12 +2112,14 @@ export function apply(ctx: Context) {
     description:
       'Kupiec POF test: backtest a VaR series against realized returns — counts failures (losses exceeding VaR), ' +
       'compares against the expected count, computes the likelihood-ratio statistic and approximate p-value, ' +
-      'and reports whether the VaR model passes at 95% (LR <= 3.841). Too-few failures (overly conservative VaR) ' +
-      'also fail. Feed returns and the matching per-period VaR series (positive loss values).',
+      'and reports non-rejection at a fixed 5% significance level (LR <= 3.841458820694124). ' +
+      'Too-few or too-many failures can reject depending on sample size and VaR confidence. ' +
+      'The chi-square p-value is asymptotic, not an exact small-sample binomial test. ' +
+      'Feed finite returns and the matching per-period VaR series (positive loss values).',
     parameters: {
       returns: { type: 'array', items: { type: 'number' }, required: true, description: 'Realized returns as decimals' },
       varSeries: { type: 'array', items: { type: 'number' }, required: true, description: 'VaR per period (positive loss), aligned with returns' },
-      confidence: { type: 'number', description: 'VaR confidence level, default 0.95' },
+      confidence: { type: 'number', description: 'VaR confidence level in (0, 1), default 0.95; test significance stays at 0.05' },
     },
     output: {
       schema: {
@@ -2135,7 +2137,7 @@ export function apply(ctx: Context) {
       render: (args, value) => [{
         type: 'text',
         text: `VaR backtest: ${value.failures} failures (expected ${value.expected.toFixed(1)}), ` +
-          `LR ${value.lrStat === Number.POSITIVE_INFINITY ? '∞' : value.lrStat.toFixed(3)}, ${value.passed ? 'PASS ✓' : 'FAIL ✗'}`
+          `LR ${value.lrStat.toFixed(3)}, ${value.passed ? 'PASS ✓' : 'FAIL ✗'}`
       }],
     },
     isConcurrencySafe: () => true,

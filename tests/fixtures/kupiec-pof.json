@@ -1,0 +1,464 @@
+[
+  {
+    "name": "issue-137",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 0,
+      "expected": 0.15000000000000013,
+      "lrStat": 0.3077597663253035,
+      "pValue": 0.5790581467152064,
+      "passed": true,
+      "periods": 3
+    }
+  },
+  {
+    "name": "zero-short",
+    "periods": 2,
+    "failures": 0,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 0,
+      "expected": 0.10000000000000009,
+      "lrStat": 0.2051731775502023,
+      "pValue": 0.6505772142703679,
+      "passed": true,
+      "periods": 2
+    }
+  },
+  {
+    "name": "zero-before-cutoff",
+    "periods": 37,
+    "failures": 0,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 0,
+      "expected": 1.8500000000000016,
+      "lrStat": 3.795703784678743,
+      "pValue": 0.05138426721154163,
+      "passed": true,
+      "periods": 37
+    }
+  },
+  {
+    "name": "zero-after-cutoff",
+    "periods": 38,
+    "failures": 0,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 0,
+      "expected": 1.9000000000000017,
+      "lrStat": 3.898290373453844,
+      "pValue": 0.048335270636167264,
+      "passed": false,
+      "periods": 38
+    }
+  },
+  {
+    "name": "zero-long",
+    "periods": 100,
+    "failures": 0,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 0,
+      "expected": 5.000000000000004,
+      "lrStat": 10.258658877510117,
+      "pValue": 0.0013604454302787936,
+      "passed": false,
+      "periods": 100
+    }
+  },
+  {
+    "name": "zero-99-short",
+    "periods": 100,
+    "failures": 0,
+    "confidence": 0.99,
+    "expected": {
+      "failures": 0,
+      "expected": 1.0000000000000009,
+      "lrStat": 2.01006717070029,
+      "pValue": 0.15625839953485104,
+      "passed": true,
+      "periods": 100
+    }
+  },
+  {
+    "name": "zero-99-long",
+    "periods": 200,
+    "failures": 0,
+    "confidence": 0.99,
+    "expected": {
+      "failures": 0,
+      "expected": 2.0000000000000018,
+      "lrStat": 4.02013434140058,
+      "pValue": 0.04496013210612082,
+      "passed": false,
+      "periods": 200
+    }
+  },
+  {
+    "name": "all-short-pass",
+    "periods": 2,
+    "failures": 2,
+    "confidence": 0.5,
+    "expected": {
+      "failures": 2,
+      "expected": 1.0,
+      "lrStat": 2.772588722239781,
+      "pValue": 0.09589096714246542,
+      "passed": true,
+      "periods": 2
+    }
+  },
+  {
+    "name": "all-longer-reject",
+    "periods": 3,
+    "failures": 3,
+    "confidence": 0.5,
+    "expected": {
+      "failures": 3,
+      "expected": 1.5,
+      "lrStat": 4.1588830833596715,
+      "pValue": 0.04141670648736835,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "all-95",
+    "periods": 3,
+    "failures": 3,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 3,
+      "expected": 0.15000000000000013,
+      "lrStat": 17.97439364132394,
+      "pValue": 2.238966098276822e-05,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "all-long-tail",
+    "periods": 100,
+    "failures": 100,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 100,
+      "expected": 5.000000000000004,
+      "lrStat": 599.146454710798,
+      "pValue": 2.5671553040836034e-132,
+      "passed": false,
+      "periods": 100
+    }
+  },
+  {
+    "name": "all-underflow",
+    "periods": 1000,
+    "failures": 1000,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 1000,
+      "expected": 50.00000000000004,
+      "lrStat": 5991.46454710798,
+      "pValue": 0.0,
+      "passed": false,
+      "periods": 1000
+    }
+  },
+  {
+    "name": "partial-match",
+    "periods": 20,
+    "failures": 1,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 1,
+      "expected": 1.0000000000000009,
+      "lrStat": 8.303799002326436e-31,
+      "pValue": 0.9999999999999992,
+      "passed": true,
+      "periods": 20
+    }
+  },
+  {
+    "name": "partial-match-exact",
+    "periods": 100,
+    "failures": 50,
+    "confidence": 0.5,
+    "expected": {
+      "failures": 50,
+      "expected": 50.0,
+      "lrStat": 0.0,
+      "pValue": 1.0,
+      "passed": true,
+      "periods": 100
+    }
+  },
+  {
+    "name": "partial-pass",
+    "periods": 100,
+    "failures": 7,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 7,
+      "expected": 5.000000000000004,
+      "lrStat": 0.7530152015019864,
+      "pValue": 0.3855232760085772,
+      "passed": true,
+      "periods": 100
+    }
+  },
+  {
+    "name": "partial-reject",
+    "periods": 100,
+    "failures": 20,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 20,
+      "expected": 5.000000000000004,
+      "lrStat": 27.95573333653012,
+      "pValue": 1.2412264553072172e-07,
+      "passed": false,
+      "periods": 100
+    }
+  },
+  {
+    "name": "partial-long-pass",
+    "periods": 1000,
+    "failures": 60,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 60,
+      "expected": 50.00000000000004,
+      "lrStat": 1.9842212738650924,
+      "pValue": 0.15894640979403024,
+      "passed": true,
+      "periods": 1000
+    }
+  },
+  {
+    "name": "partial-long-reject",
+    "periods": 1000,
+    "failures": 100,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 100,
+      "expected": 50.00000000000004,
+      "lrStat": 41.30843782549259,
+      "pValue": 1.300064907944576e-10,
+      "passed": false,
+      "periods": 1000
+    }
+  },
+  {
+    "name": "partial-tiny-tail",
+    "periods": 1000,
+    "failures": 200,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 200,
+      "expected": 50.00000000000004,
+      "lrStat": 279.5573333653012,
+      "pValue": 9.37693994507857e-63,
+      "passed": false,
+      "periods": 1000
+    }
+  },
+  {
+    "name": "critical-rounding",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 0.5271869761033854,
+    "expected": {
+      "failures": 0,
+      "expected": 1.4184390716898438,
+      "lrStat": 3.8412,
+      "pValue": 0.050007718523046044,
+      "passed": true,
+      "periods": 3
+    }
+  },
+  {
+    "name": "critical-reject",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 0.5271518314764791,
+    "expected": {
+      "failures": 0,
+      "expected": 1.4185445055705626,
+      "lrStat": 3.8415999999999992,
+      "pValue": 0.04999579029644091,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "tiny-confidence-zero",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 5e-324,
+    "expected": {
+      "failures": 0,
+      "expected": 3.0,
+      "lrStat": 4466.640431528288,
+      "pValue": 0.0,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "tiny-confidence-all",
+    "periods": 3,
+    "failures": 3,
+    "confidence": 5e-324,
+    "expected": {
+      "failures": 3,
+      "expected": 3.0,
+      "lrStat": 3e-323,
+      "pValue": 1.0,
+      "passed": true,
+      "periods": 3
+    }
+  },
+  {
+    "name": "tiny-confidence-partial",
+    "periods": 3,
+    "failures": 2,
+    "confidence": 1e-300,
+    "expected": {
+      "failures": 2,
+      "expected": 3.0,
+      "lrStat": 1377.7319707866586,
+      "pValue": 1.4499292522443345e-301,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "near-one-zero",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 0.9999999999999999,
+    "expected": {
+      "failures": 0,
+      "expected": 3.3306690738754696e-16,
+      "lrStat": 6.661338147750939e-16,
+      "pValue": 0.999999979406944,
+      "passed": true,
+      "periods": 3
+    }
+  },
+  {
+    "name": "near-one-all",
+    "periods": 3,
+    "failures": 3,
+    "confidence": 0.9999999999999999,
+    "expected": {
+      "failures": 3,
+      "expected": 3.3306690738754696e-16,
+      "lrStat": 220.4208034180626,
+      "pValue": 7.321431874880219e-50,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "near-one-partial",
+    "periods": 3,
+    "failures": 1,
+    "confidence": 0.9999999999999999,
+    "expected": {
+      "failures": 1,
+      "expected": 3.3306690738754696e-16,
+      "lrStat": 69.65451612958533,
+      "pValue": 7.065677631105495e-17,
+      "passed": false,
+      "periods": 3
+    }
+  },
+  {
+    "name": "near-match-long",
+    "periods": 100000,
+    "failures": 5000,
+    "confidence": 0.95,
+    "expected": {
+      "failures": 5000,
+      "expected": 5000.000000000005,
+      "lrStat": 4.1518995011632175e-27,
+      "pValue": 0.9999999999999486,
+      "passed": true,
+      "periods": 100000
+    }
+  },
+  {
+    "name": "near-match-below",
+    "periods": 100000,
+    "failures": 5000,
+    "confidence": 0.9499999999,
+    "expected": {
+      "failures": 5000,
+      "expected": 5000.000010000005,
+      "lrStat": 2.1052653734658514e-14,
+      "pValue": 0.9999998842306792,
+      "passed": true,
+      "periods": 100000
+    }
+  },
+  {
+    "name": "near-match-above",
+    "periods": 100000,
+    "failures": 5000,
+    "confidence": 0.9500000001,
+    "expected": {
+      "failures": 5000,
+      "expected": 4999.999990000004,
+      "lrStat": 2.1052616390854936e-14,
+      "pValue": 0.9999998842307819,
+      "passed": true,
+      "periods": 100000
+    }
+  },
+  {
+    "name": "match-high-rate",
+    "periods": 100,
+    "failures": 99,
+    "confidence": 0.01,
+    "expected": {
+      "failures": 99,
+      "expected": 99.0,
+      "lrStat": 4.37711350997099e-34,
+      "pValue": 1.0,
+      "passed": true,
+      "periods": 100
+    }
+  },
+  {
+    "name": "sf-series-edge",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 0.7165314299956843,
+    "expected": {
+      "failures": 0,
+      "expected": 0.8504057100129471,
+      "lrStat": 1.9999989999999999,
+      "pValue": 0.1572993108271984,
+      "passed": true,
+      "periods": 3
+    }
+  },
+  {
+    "name": "sf-fraction-edge",
+    "periods": 3,
+    "failures": 0,
+    "confidence": 0.7165311911519141,
+    "expected": {
+      "failures": 0,
+      "expected": 0.8504064265442577,
+      "lrStat": 2.000001,
+      "pValue": 0.1572991032734497,
+      "passed": true,
+      "periods": 3
+    }
+  }
+]
