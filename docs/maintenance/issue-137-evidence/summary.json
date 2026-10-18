@@ -1,0 +1,90 @@
+{
+  "baseCommit": "29401154b45d5620e052276b60fb5d0279226a75",
+  "node": "v24.19.0",
+  "fullSuitePerFamily": {
+    "tests": 296,
+    "passed": 296,
+    "failed": 0
+  },
+  "targetedRegressionChecks": 73,
+  "preFixRegression": {
+    "tests": 73,
+    "passed": 3,
+    "failed": 70
+  },
+  "runtime": {
+    "alpha": {
+      "dependencies": {
+        "cordis": "4.0.5-alpha.2",
+        "dsh-tools": "0.2.1-alpha.3",
+        "dsh-system-prompt": "0.2.1-alpha.3",
+        "dsh-llm": "0.2.1-alpha.3"
+      },
+      "tests": 33,
+      "passed": 33,
+      "failed": 0
+    },
+    "old": {
+      "dependencies": {
+        "cordis": "4.0.1",
+        "dsh-tools": "0.1.0-rc.6",
+        "dsh-system-prompt": "0.1.0-rc.6",
+        "dsh-llm": "0.1.0-rc.6"
+      },
+      "tests": 33,
+      "passed": 33,
+      "failed": 0
+    },
+    "rc": {
+      "dependencies": {
+        "cordis": "4.0.4",
+        "dsh-tools": "0.2.0-rc.2",
+        "dsh-system-prompt": "0.2.0-rc.2",
+        "dsh-llm": "0.2.0-rc.2"
+      },
+      "tests": 33,
+      "passed": 33,
+      "failed": 0
+    }
+  },
+  "independentReference": {
+    "cases": 185,
+    "max_p_absolute_error": 4.9960036108132044e-15,
+    "max_p_relative_error_above_1e_300": 1.2478128755518723e-13,
+    "max_lr_scaled_error": 3.3306690738754696e-16,
+    "discrepancies": []
+  },
+  "alphaGates": {
+    "build": "passed",
+    "typecheck": "passed",
+    "nodeTestSuite": "passed",
+    "npmTest": "blocked: tsx IPC listen EPERM",
+    "benchmark": "passed",
+    "consumer": "passed",
+    "lineCoverage": 94.17,
+    "riskLineCoverage": 100,
+    "riskBranchCoverage": 98.65
+  },
+  "originalInput": {
+    "returns": [
+      0,
+      0.01,
+      -0.005
+    ],
+    "varSeries": [
+      0.02,
+      0.02,
+      0.02
+    ],
+    "confidence": 0.95
+  },
+  "originalInputActual": {
+    "failures": 0,
+    "expected": 0.15000000000000013,
+    "lrStat": 0.30775976632530344,
+    "pValue": 0.5790581467152063,
+    "passed": true,
+    "periods": 3
+  },
+  "rawResultsSha256": "5a4075f9363122b07912b5742e3a62d50538380d9a01387334c84127df049010"
+}
