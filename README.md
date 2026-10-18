@@ -486,3 +486,7 @@ background, building this project as an open research sandbox.
 - [GitHub](https://github.com/pengpengyi92) · [LinkedIn](https://www.linkedin.com/in/pengyi-peng-625511253/)
 
 *Methods open, secrets internal — the author's research is public, the strategies are not.* 🐳
+
+### Compatibility contributors
+
+Thanks to **@hufeide** for the DSH 0.2.x adaptation in [#136](https://github.com/pengpengyi92/dsh-quant/pull/136), and **@ziladan** for requesting 0.2.1-rc.2 verification in [#139](https://github.com/pengpengyi92/dsh-quant/issues/139) / [#140](https://github.com/pengpengyi92/dsh-quant/issues/140). The [compatibility audit](docs/maintenance/DSH-0.2.1-RC.2-2026-10-18.md) records tested versions and release boundaries.

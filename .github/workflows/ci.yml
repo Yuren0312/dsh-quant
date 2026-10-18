@@ -28,3 +28,27 @@ jobs:
           python3 -c "import sys; cov=float('${LINE_COV}'.rstrip('%')); print('coverage OK' if cov >= 85 else f'COVERAGE FAIL: {cov}% < 85%'); sys.exit(0 if cov >= 85 else 1)"
       - name: Consumer test (packed package)
         run: bash scripts/consumer-test.sh
+
+  compatibility:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        dsh: ['0.1.0-rc.6', '0.2.0-rc.2', '0.2.1-alpha.3', '0.2.1-rc.2']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install coherent pinned host family
+        run: node scripts/install-dsh-cohort.mjs '${{ matrix.dsh }}'
+      - run: npm run build
+      - run: npm run typecheck
+      - name: Typecheck compatibility scripts and Loader test
+        run: npm run typecheck:scripts
+      - name: Unit and real-runtime regressions
+        run: node --import tsx --test tests/*.spec.ts
+      - name: 59 registrations and 56 deterministic calls
+        run: npm run test:compat
+      - name: Packed plugin in a real Loader consumer
+        run: node scripts/consumer-runtime.mjs '${{ matrix.dsh }}'

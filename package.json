@@ -63,19 +63,22 @@
     "gen:tools": "tsx scripts/gen-tools-json.ts",
     "typecheck": "tsc --noEmit",
     "bench": "tsx benchmark/smoke.ts",
-    "test:cov": "node --experimental-test-coverage --import tsx --test tests/*.spec.ts"
+    "test:cov": "node --experimental-test-coverage --import tsx --test tests/*.spec.ts",
+    "typecheck:scripts": "tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --allowImportingTsExtensions verify.ts demos/rd-workflow.ts demos/gen-ui-demo-data.ts consumer-test/boot.ts tests/loader-composition.spec.ts scripts/review-136-smoke.ts",
+    "test:compat": "node --import tsx scripts/review-136-smoke.ts"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.0",
-    "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
-    "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5"
+    "@deepseek-ai/cordis": "^4.0.0 || >=4.0.5-alpha.1 <5.0.0",
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0",
+    "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "^4.0.0",
-    "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
-    "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5",
-    "@deepseek-ai/cordis-plugin-loader": "^1.0.2",
-    "@deepseek-ai/cordis-plugin-include": "^1.0.6",
+    "@deepseek-ai/cordis": "^4.0.0 || >=4.0.5-alpha.1 <5.0.0",
+    "@deepseek-ai/dsh-llm": "^0.1.0-rc.6 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0",
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0",
+    "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0",
+    "@deepseek-ai/cordis-plugin-loader": "^1.0.5 || >=1.0.6-alpha.1 <2.0.0",
+    "@deepseek-ai/cordis-plugin-include": "^1.0.9 || >=1.0.10-alpha.1 <2.0.0",
     "@types/node": "^24.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
@@ -85,6 +88,7 @@
   },
   "engines": {
     "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
+    "pnpm": ">=9.0.0",
+    "dsh": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0"
   }
 }

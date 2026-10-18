@@ -4,6 +4,8 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { Context } from '@deepseek-ai/cordis'
+// Call IDs are strings at runtime. Derive the brand from execute so 0.1.x
+// does not import the ToolCallId value introduced in 0.2.x.
 import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
 import ToolRuntime from '@deepseek-ai/dsh-tools'
 import { apply } from '../src/index.ts'
@@ -13,8 +15,18 @@ await ctx.plugin(SystemPrompt)
 await ctx.plugin(ToolRuntime)
 await ctx.plugin({ name: 'dsh-quant', inject: ['tools'], apply })
 const signal = new AbortController().signal
-const call = (name: string, args: Record<string, unknown>) =>
-  ctx.tools.execute({ callId: `gen-${name}`, name, arguments: args, signal })
+
+/** dsh-tools 0.2.x：execute 接受品牌化 ToolCallId，成功值是规范 JsonValue；按工具输出契约为 value 开一个宽松视图。 */
+interface QuantCallResult {
+  isError: boolean
+  error?: { message: string }
+  value: any
+}
+
+const call = async (name: string, args: Record<string, unknown>): Promise<QuantCallResult> => {
+  const r = await ctx.tools.execute({ callId: `gen-${name}` as Parameters<typeof ctx.tools.execute>[0]['callId'], name, arguments: args, signal })
+  return { isError: r.isError, error: r.error, value: r.isError ? undefined : r.value }
+}
 
 // 1. 取数 + 指标 + 回测
 const btc = await call('quant_market_fetch', { symbol: 'BTCUSDT', interval: '1d', limit: 120 })

@@ -1,0 +1,105 @@
+{
+  "master": {
+    "0.1.0-rc.6": "compatible",
+    "0.2.0-rc.2": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "0.2.0-rc.2",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5"
+      },
+      "exempted": false
+    },
+    "0.2.1-alpha.3": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "0.2.1-alpha.3",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5"
+      },
+      "exempted": false
+    },
+    "0.2.1-rc.2": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "0.2.1-rc.2",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5"
+      },
+      "exempted": false
+    },
+    "0.3.0": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "0.3.0",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5"
+      },
+      "exempted": false
+    },
+    "1.0.0": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "1.0.0",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5"
+      },
+      "exempted": false
+    }
+  },
+  "pr136": {
+    "0.1.0-rc.6": "compatible",
+    "0.2.0-rc.2": "compatible",
+    "0.2.1-alpha.3": "compatible",
+    "0.2.1-rc.2": "compatible",
+    "0.3.0": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "0.3.0",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0"
+      },
+      "exempted": false
+    },
+    "1.0.0": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "1.0.0",
+      "requirements": {
+        "@deepseek-ai/dsh-tools": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0",
+        "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0"
+      },
+      "exempted": false
+    }
+  },
+  "candidate": {
+    "0.1.0-rc.6": "compatible",
+    "0.2.0-rc.2": "compatible",
+    "0.2.1-alpha.3": "compatible",
+    "0.2.1-rc.2": "compatible",
+    "0.3.0": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "0.3.0",
+      "requirements": {
+        "engines.dsh": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0"
+      },
+      "exempted": false
+    },
+    "1.0.0": {
+      "name": "dsh-quant",
+      "version": "0.91.0",
+      "runtimeVersion": "1.0.0",
+      "requirements": {
+        "engines.dsh": "^0.1.0-rc.5 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.2 <0.3.0"
+      },
+      "exempted": false
+    }
+  }
+}
