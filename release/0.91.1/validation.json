@@ -1,0 +1,76 @@
+{
+  "checked_at": "2026-10-18T16:20:59.348791+08:00",
+  "node": "24.19.0",
+  "npm": "11.9.0",
+  "version": "0.91.1",
+  "artifact_source": "local candidate, not registry",
+  "filename": "dsh-quant-0.91.1.tgz",
+  "sha256": "6d1e6c47d74de4bc2a1b93af41d39c6feaebb9e437e109dd6b16a7abb51f9354",
+  "integrity": "sha512-5HEfDDuI3nOnRHrqEc2u8xWtsLsWfjPfcodEXC0dM9/Ibjc7pV+BITSR2usxPInmceqFGxic/mtokC9PS+ppWg==",
+  "shasum": "e2c147f2c3c76851578d6fa8fb5d6474a741dfa9",
+  "bytes": 1421888,
+  "entries": 480,
+  "build": "pass",
+  "source_typecheck": "pass",
+  "script_typecheck": "pass",
+  "node_test_suite": {
+    "tests": 298,
+    "passed": 298,
+    "failed": 0
+  },
+  "literal_npm_test": "blocked locally by tsx IPC EPERM after build/types; standard CLI deferred to PR CI",
+  "cohorts": [
+    {
+      "cohort": "0.1.0-rc.6",
+      "install": "pass",
+      "shared_peers": "pass",
+      "real_loader": "pass",
+      "sma_known_answer": "pass",
+      "registered": 59,
+      "passed": 56,
+      "failed": 0,
+      "unverified": 3
+    },
+    {
+      "cohort": "0.2.0-rc.2",
+      "install": "pass",
+      "shared_peers": "pass",
+      "real_loader": "pass",
+      "sma_known_answer": "pass",
+      "registered": 59,
+      "passed": 56,
+      "failed": 0,
+      "unverified": 3
+    },
+    {
+      "cohort": "0.2.1-alpha.3",
+      "install": "pass",
+      "shared_peers": "pass",
+      "real_loader": "pass",
+      "sma_known_answer": "pass",
+      "registered": 59,
+      "passed": 56,
+      "failed": 0,
+      "unverified": 3
+    },
+    {
+      "cohort": "0.2.1-rc.2",
+      "install": "pass",
+      "shared_peers": "pass",
+      "real_loader": "pass",
+      "sma_known_answer": "pass",
+      "registered": 59,
+      "passed": 56,
+      "failed": 0,
+      "unverified": 3
+    }
+  ],
+  "logs_sha256": "159fa01ea122dfc4a24ade4db14a94ce4eb6190ff5082e931c1a7760d5c51cc6",
+  "npm_published": false,
+  "registry_consumer_verified": false,
+  "unverified": [
+    "3 live API tools",
+    "full desktop UI",
+    "model-driven sessions"
+  ]
+}

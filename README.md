@@ -77,7 +77,7 @@ A common question: a quant project without `.py` files? **Answer: 0 Python files
 
 One goal: **build the most usable AI-native quant repo** 🐋
 
-**59 `quant_*` tools · 6 domains · 215 unit tests · zero runtime deps**. Full positioning: pinned [Issue #9](https://github.com/pengpengyi92/dsh-quant/issues/9).
+**59 `quant_*` tools · 6 domains · 298 tests · zero runtime deps**. Full positioning: pinned [Issue #9](https://github.com/pengpengyi92/dsh-quant/issues/9).
 
 ## 🤖 For visiting agents
 
@@ -85,6 +85,16 @@ Agents landing on this repo: start at [AGENTS.md](AGENTS.md) (root-level, auto-r
 by Copilot / Claude Code / dsh), then the closed-loop example
 [plugin/CASE_STUDY.md](plugin/CASE_STUDY.md) or [Discussion #38](https://github.com/pengpengyi92/dsh-quant/discussions/38),
 and the one-glance contract [mcp/AGENT_GUIDE.md](mcp/AGENT_GUIDE.md).
+
+## Compatibility release status
+
+The **0.91.1 release candidate** includes DSH 0.2.1-rc.2 compatibility, with
+0.1.0-rc.6 / 0.2.0-rc.2 / 0.2.1-alpha.3 coverage retained. npm was still at
+0.90.0 when this candidate was prepared on 2026-10-18. Check the
+[delivery record](docs/maintenance/RELEASE-0.91.1-2026-10-18.md) and
+`npm view dsh-quant version` before treating the fix as published.
+Original compatibility contribution: **@hufeide (#136)**; user reports:
+**@ziladan (#139 / #140)**.
 
 ## Quick Install (dsh users)
 

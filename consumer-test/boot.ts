@@ -48,5 +48,5 @@ if (r.isError || JSON.stringify((r.value as { values: (number | null)[] }).value
   throw new Error('quant_sma result mismatch')
 }
 
-console.log('\n✅ consumer simulation passed: published package loads and executes')
+console.log('\n✅ consumer simulation passed: installed package loads and executes')
 await ctx.fiber.dispose()

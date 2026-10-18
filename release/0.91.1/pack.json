@@ -1,0 +1,2414 @@
+{
+  "id": "dsh-quant@0.91.1",
+  "name": "dsh-quant",
+  "version": "0.91.1",
+  "size": 1421888,
+  "unpackedSize": 2647841,
+  "shasum": "e2c147f2c3c76851578d6fa8fb5d6474a741dfa9",
+  "integrity": "sha512-5HEfDDuI3nOnRHrqEc2u8xWtsLsWfjPfcodEXC0dM9/Ibjc7pV+BITSR2usxPInmceqFGxic/mtokC9PS+ppWg==",
+  "filename": "dsh-quant-0.91.1.tgz",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "size": 4924,
+      "mode": 420
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size": 48916,
+      "mode": 420
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size": 2828,
+      "mode": 420
+    },
+    {
+      "path": "LICENSE",
+      "size": 1090,
+      "mode": 420
+    },
+    {
+      "path": "NEWS.md",
+      "size": 9015,
+      "mode": 420
+    },
+    {
+      "path": "README.md",
+      "size": 39779,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/ecb/bochk.md",
+      "size": 8867,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/ecb/hsbc.md",
+      "size": 12768,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/ecb/README.md",
+      "size": 2907,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix/dadao/job-people-cross-matrix.md",
+      "size": 6497,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix/tenpay-global-fit/job-people-cross-matrix.md",
+      "size": 13150,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix/tenpay-global-fit/people-matrix.md",
+      "size": 10168,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix5-real-estate/cases/2026-10-04_lan-kwai-fong-central-soho.md",
+      "size": 3010,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix5-real-estate/cases/2026-10-04_mid-levels-west.md",
+      "size": 2492,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix5-real-estate/cases/2026-10-04_wan-chai-station.md",
+      "size": 6921,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix5-real-estate/CHANGELOG.md",
+      "size": 628,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/jmatrix5-real-estate/README.md",
+      "size": 5549,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/README.md",
+      "size": 2734,
+      "mode": 420
+    },
+    {
+      "path": "benchmark/smoke.ts",
+      "size": 1957,
+      "mode": 420
+    },
+    {
+      "path": "cli/main.mjs",
+      "size": 20441,
+      "mode": 420
+    },
+    {
+      "path": "cli/tui.mjs",
+      "size": 9643,
+      "mode": 420
+    },
+    {
+      "path": "cordis.patch.yml",
+      "size": 435,
+      "mode": 420
+    },
+    {
+      "path": "demos/gen-ui-demo-data.ts",
+      "size": 4151,
+      "mode": 420
+    },
+    {
+      "path": "demos/ml-workflow.ts",
+      "size": 3423,
+      "mode": 420
+    },
+    {
+      "path": "demos/multi-asset-research.ts",
+      "size": 1986,
+      "mode": 420
+    },
+    {
+      "path": "demos/rd-workflow.ts",
+      "size": 5642,
+      "mode": 420
+    },
+    {
+      "path": "demos/ui-demo-data.json",
+      "size": 21191,
+      "mode": 420
+    },
+    {
+      "path": "demos/ui-demo-preview.png",
+      "size": 364730,
+      "mode": 420
+    },
+    {
+      "path": "demos/ui-demo-standalone.html",
+      "size": 33512,
+      "mode": 420
+    },
+    {
+      "path": "demos/ui-demo.html",
+      "size": 12343,
+      "mode": 420
+    },
+    {
+      "path": "demos/whale-trading.png",
+      "size": 246161,
+      "mode": 420
+    },
+    {
+      "path": "demos/whale-trading.svg",
+      "size": 5915,
+      "mode": 420
+    },
+    {
+      "path": "docs/DAILY_PROMOTION_CHANNELS.md",
+      "size": 3582,
+      "mode": 420
+    },
+    {
+      "path": "docs/ECOSYSTEM_PLAYBOOK.md",
+      "size": 3291,
+      "mode": 420
+    },
+    {
+      "path": "docs/ENVIRONMENT.md",
+      "size": 2354,
+      "mode": 420
+    },
+    {
+      "path": "docs/GITHUBDAILY_SELFNOMINATION.md",
+      "size": 3448,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/DSH-0.2.1-RC.2-2026-10-18.md",
+      "size": 6550,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/dsh-0.2.1-rc.2-evidence/host-gate-results.json",
+      "size": 2998,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/dsh-0.2.1-rc.2-evidence/raw-results.zip",
+      "size": 100171,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/dsh-0.2.1-rc.2-evidence/release.json",
+      "size": 5674,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/dsh-0.2.1-rc.2-evidence/summary.json",
+      "size": 14516,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/issue-137-evidence/raw-results.zip",
+      "size": 86555,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/issue-137-evidence/summary.json",
+      "size": 2049,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/ISSUE-137-KUPIEC-POF.md",
+      "size": 9389,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/baseline-loader-old.log",
+      "size": 466,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/bench-node-alpha.log",
+      "size": 253,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/consumer-alpha.log",
+      "size": 200,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/fix-build-alpha.log",
+      "size": 294,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/fix-build-old.log",
+      "size": 294,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/fix-build-rc.log",
+      "size": 294,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/fix-tests-alpha.log",
+      "size": 14964,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/fix-tests-old.log",
+      "size": 14978,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/fix-tests-rc.log",
+      "size": 14978,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/npm-ci-standard.log",
+      "size": 127,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/old-pinned-dev-dependencies.json",
+      "size": 875,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/regression-alpha-before.log",
+      "size": 922,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/regression-old-before.log",
+      "size": 921,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/regression-rc-before.log",
+      "size": 930,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/scripts-typecheck-alpha.log",
+      "size": 0,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/smoke-alpha-normal.log",
+      "size": 1406,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/smoke-alpha.log",
+      "size": 1533,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/smoke-old-normal.log",
+      "size": 1406,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/smoke-old.log",
+      "size": 1533,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/smoke-rc-normal.log",
+      "size": 1406,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/smoke-rc.log",
+      "size": 1533,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/unit-alpha.log",
+      "size": 14857,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/unit-old.log",
+      "size": 15225,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/pr-136-evidence/unit-rc.log",
+      "size": 14844,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/PR-136-REVIEW-2026-10-17.md",
+      "size": 7652,
+      "mode": 420
+    },
+    {
+      "path": "docs/maintenance/RELEASE-0.91.1-2026-10-18.md",
+      "size": 7972,
+      "mode": 420
+    },
+    {
+      "path": "docs/ML_GUIDE.md",
+      "size": 6035,
+      "mode": 420
+    },
+    {
+      "path": "docs/ONBOARDING.md",
+      "size": 3260,
+      "mode": 420
+    },
+    {
+      "path": "docs/QUANT_ECOSYSTEM.md",
+      "size": 2838,
+      "mode": 420
+    },
+    {
+      "path": "eval/README.md",
+      "size": 578,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-alpha/decay.d.ts",
+      "size": 1435,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-alpha/decay.js",
+      "size": 4187,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-alpha/factor.d.ts",
+      "size": 3823,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-alpha/factor.js",
+      "size": 11740,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-alpha/indicators.d.ts",
+      "size": 4481,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-alpha/indicators.js",
+      "size": 13183,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-community/github.d.ts",
+      "size": 1772,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-community/github.js",
+      "size": 3864,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-community/npm.d.ts",
+      "size": 1308,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-community/npm.js",
+      "size": 2542,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-community/pulse.d.ts",
+      "size": 1734,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-community/pulse.js",
+      "size": 4402,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/data-guide.d.ts",
+      "size": 3770,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/data-guide.js",
+      "size": 19055,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/market.d.ts",
+      "size": 3386,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/market.js",
+      "size": 15503,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/quality.d.ts",
+      "size": 3086,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/quality.js",
+      "size": 5984,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/resample.d.ts",
+      "size": 903,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/resample.js",
+      "size": 1219,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/stats.d.ts",
+      "size": 3154,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-data/stats.js",
+      "size": 7417,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/chart.d.ts",
+      "size": 2719,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/chart.js",
+      "size": 2008,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/execute.d.ts",
+      "size": 2037,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/execute.js",
+      "size": 5003,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/fund.d.ts",
+      "size": 1540,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/fund.js",
+      "size": 2519,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/pipeline.d.ts",
+      "size": 3078,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/pipeline.js",
+      "size": 6773,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/report.d.ts",
+      "size": 713,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/report.js",
+      "size": 1908,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/trade-quality.d.ts",
+      "size": 1462,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/trade-quality.js",
+      "size": 2669,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/trading-cost.d.ts",
+      "size": 1328,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-execution/trading-cost.js",
+      "size": 2771,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/attribution.d.ts",
+      "size": 1380,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/attribution.js",
+      "size": 5499,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/backtest.d.ts",
+      "size": 4129,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/backtest.js",
+      "size": 21172,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/deflated-sharpe.d.ts",
+      "size": 1466,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/deflated-sharpe.js",
+      "size": 4355,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/factor-corr.d.ts",
+      "size": 1089,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/factor-corr.js",
+      "size": 4951,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/layered.d.ts",
+      "size": 1775,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/layered.js",
+      "size": 5136,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/linear.d.ts",
+      "size": 1567,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/linear.js",
+      "size": 4942,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/metrics.d.ts",
+      "size": 1818,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/metrics.js",
+      "size": 4747,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/optimizer.d.ts",
+      "size": 1361,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/optimizer.js",
+      "size": 6663,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/rebalance.d.ts",
+      "size": 1255,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/rebalance.js",
+      "size": 2759,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/sensitivity.d.ts",
+      "size": 1326,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/sensitivity.js",
+      "size": 2510,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/walkforward.d.ts",
+      "size": 1865,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-ml/walkforward.js",
+      "size": 6566,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/bond.d.ts",
+      "size": 2161,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/bond.js",
+      "size": 3779,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/drawdown.d.ts",
+      "size": 1576,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/drawdown.js",
+      "size": 2719,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/options.d.ts",
+      "size": 1953,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/options.js",
+      "size": 3976,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/risk.d.ts",
+      "size": 2291,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/risk.js",
+      "size": 7326,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/stress.d.ts",
+      "size": 1336,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/stress.js",
+      "size": 3332,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/volatility.d.ts",
+      "size": 1001,
+      "mode": 420
+    },
+    {
+      "path": "lib/dsh-risk/volatility.js",
+      "size": 1637,
+      "mode": 420
+    },
+    {
+      "path": "lib/index.d.ts",
+      "size": 3664,
+      "mode": 420
+    },
+    {
+      "path": "lib/index.js",
+      "size": 164703,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_data_labeling_inspiration.md",
+      "size": 2260,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_domain_positioning_announcement.md",
+      "size": 4683,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_factor_ecosystem_research.md",
+      "size": 2370,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_how_dsh_quant_assists_rd.md",
+      "size": 2735,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_site_and_pet_collection.md",
+      "size": 1455,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_skill_organization.md",
+      "size": 1871,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_ui_chart_design.md",
+      "size": 3880,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.1.0.md",
+      "size": 407,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.1.1.md",
+      "size": 275,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.2.0.md",
+      "size": 282,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.3.0.md",
+      "size": 329,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.4.0.md",
+      "size": 366,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.5.0.md",
+      "size": 277,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.6.0.md",
+      "size": 470,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.7.0.md",
+      "size": 708,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.8.0.md",
+      "size": 487,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.9.0.md",
+      "size": 571,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.9.1.md",
+      "size": 1198,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.10.0.md",
+      "size": 812,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.10.1.md",
+      "size": 473,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.11.0.md",
+      "size": 712,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.12.0.md",
+      "size": 935,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.13.0.md",
+      "size": 802,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.13.1.md",
+      "size": 482,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.13.2.md",
+      "size": 463,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.14.0.md",
+      "size": 693,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.15.0.md",
+      "size": 710,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.16.0.md",
+      "size": 785,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.17.0.md",
+      "size": 2182,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.18.0.md",
+      "size": 2252,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.19.0.md",
+      "size": 2006,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-16_v0.20.0.md",
+      "size": 1441,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_agent_engagement.md",
+      "size": 648,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_agent_onboarding.md",
+      "size": 623,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_china_batch1.md",
+      "size": 782,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_expansion.md",
+      "size": 1099,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave3.md",
+      "size": 1034,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave4.md",
+      "size": 948,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave5.md",
+      "size": 858,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave6.md",
+      "size": 890,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave7.md",
+      "size": 745,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave8.md",
+      "size": 704,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave9.md",
+      "size": 729,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_columns_wave10.md",
+      "size": 937,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_ecosystem_internalization.md",
+      "size": 925,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_github_incident.md",
+      "size": 1571,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_lineage_report.md",
+      "size": 574,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_multimodal_ownership.md",
+      "size": 1603,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_onboarding_ux.md",
+      "size": 973,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_pitch_script.md",
+      "size": 4490,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_plugin_case.md",
+      "size": 475,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_plugin_library.md",
+      "size": 790,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_plugin_philosophy.md",
+      "size": 724,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_pmmlab_share.md",
+      "size": 800,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_product_mindset.md",
+      "size": 1787,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_productization_idea.md",
+      "size": 1326,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_promotion_round.md",
+      "size": 1611,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_quant_columns.md",
+      "size": 868,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_sig_timeline.md",
+      "size": 630,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_teams_announcement.md",
+      "size": 564,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_v0.21.0.md",
+      "size": 1257,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_v0.22.0.md",
+      "size": 3400,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-17_video_promo.md",
+      "size": 1438,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_3cn.md",
+      "size": 473,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_10cn.md",
+      "size": 1556,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_a8.md",
+      "size": 797,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_age.md",
+      "size": 604,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_ann_guide.md",
+      "size": 668,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_b7.md",
+      "size": 820,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_bal.md",
+      "size": 451,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_bank_lineage.md",
+      "size": 1260,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_c5.md",
+      "size": 660,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_cap.md",
+      "size": 611,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_china_batch2.md",
+      "size": 2285,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_d4.md",
+      "size": 802,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_dd_standard.md",
+      "size": 1245,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_fcn2.md",
+      "size": 885,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_golden_bull.md",
+      "size": 935,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_imc.md",
+      "size": 565,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_js.md",
+      "size": 663,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_lite5.md",
+      "size": 823,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_lq.md",
+      "size": 614,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_mil.md",
+      "size": 550,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_office.md",
+      "size": 695,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_op.md",
+      "size": 571,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_p72.md",
+      "size": 555,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_pod.md",
+      "size": 515,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_qmap.md",
+      "size": 711,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_sd.md",
+      "size": 524,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_sh.md",
+      "size": 694,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_sig.md",
+      "size": 696,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_two_mode.md",
+      "size": 832,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_vend.md",
+      "size": 548,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-19_xtx.md",
+      "size": 571,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_chi_quant.md",
+      "size": 785,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_citadel.md",
+      "size": 1020,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_deshaw.md",
+      "size": 1008,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_hk_foreign_quant.md",
+      "size": 1042,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_ldn_foreign_quant.md",
+      "size": 953,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_nyc_foreign_quant.md",
+      "size": 882,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_qrt.md",
+      "size": 1133,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_quant_people.md",
+      "size": 1161,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_quant_world_map.md",
+      "size": 842,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_renaissance.md",
+      "size": 1077,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_sg_foreign_quant.md",
+      "size": 1000,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_sig.md",
+      "size": 903,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_twosigma.md",
+      "size": 1220,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-20_worldquant.md",
+      "size": 1141,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-21_tyo_quant.md",
+      "size": 787,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-22_ai_infra_data_modules.md",
+      "size": 1106,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-22_bridges.md",
+      "size": 889,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-22_cost_rebalance.md",
+      "size": 568,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-22_factor_neutralize_fix.md",
+      "size": 1040,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-22_ic_decay_optimizer.md",
+      "size": 815,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-22_validation_tools.md",
+      "size": 872,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-23_highflyer_special.md",
+      "size": 1030,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-08-23_ubiquant_special.md",
+      "size": 1060,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-09-11_qrt_deep_dd.md",
+      "size": 2777,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-09-23_pcpt_ml_model_stack.md",
+      "size": 1226,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-09-25_pcpt_six_layer_research_system.md",
+      "size": 2459,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-10-03_pfscc_fiscc_institutional_research_support_network.md",
+      "size": 730,
+      "mode": 420
+    },
+    {
+      "path": "log/2026-10-18_release_0.91.1_delivery.md",
+      "size": 1159,
+      "mode": 420
+    },
+    {
+      "path": "mcp/AGENT_GUIDE.md",
+      "size": 2677,
+      "mode": 420
+    },
+    {
+      "path": "mcp/README.md",
+      "size": 2325,
+      "mode": 420
+    },
+    {
+      "path": "mcp/tools.json",
+      "size": 63369,
+      "mode": 420
+    },
+    {
+      "path": "memory/README.md",
+      "size": 498,
+      "mode": 420
+    },
+    {
+      "path": "package.json",
+      "size": 3087,
+      "mode": 420
+    },
+    {
+      "path": "plan/README.md",
+      "size": 635,
+      "mode": 420
+    },
+    {
+      "path": "plugin/alpha/README.md",
+      "size": 1439,
+      "mode": 420
+    },
+    {
+      "path": "plugin/CASE_STUDY.md",
+      "size": 4268,
+      "mode": 420
+    },
+    {
+      "path": "plugin/combo/README.md",
+      "size": 1370,
+      "mode": 420
+    },
+    {
+      "path": "plugin/data/README.md",
+      "size": 1222,
+      "mode": 420
+    },
+    {
+      "path": "plugin/execution/README.md",
+      "size": 1519,
+      "mode": 420
+    },
+    {
+      "path": "plugin/README.md",
+      "size": 1672,
+      "mode": 420
+    },
+    {
+      "path": "plugin/risk/README.md",
+      "size": 1159,
+      "mode": 420
+    },
+    {
+      "path": "plugin/ROADMAP.md",
+      "size": 1353,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/AGE_CN.md",
+      "size": 3701,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/AGE_GLOBAL.md",
+      "size": 4338,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/aifang.md",
+      "size": 1578,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/akuna.md",
+      "size": 1108,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/alameda.md",
+      "size": 1754,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/ANALYSIS.md",
+      "size": 4872,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/aqr.md",
+      "size": 1736,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/aspect.md",
+      "size": 1309,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/BACKTEST_LAYERED_GUIDE.md",
+      "size": 5570,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/bailu.md",
+      "size": 1367,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/BALYASNY_SPECIAL.md",
+      "size": 4137,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/balyasny.md",
+      "size": 1263,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/BANK_LINEAGE.md",
+      "size": 3010,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/banyang.md",
+      "size": 1498,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/beiyang.md",
+      "size": 2513,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/bodao.md",
+      "size": 1470,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/brevanhoward.md",
+      "size": 1383,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/bridgewater.md",
+      "size": 1831,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/bridgewatercn.md",
+      "size": 2277,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/CAPITAL_MODEL.md",
+      "size": 4967,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/capula.md",
+      "size": 1378,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/centuryfrontier.md",
+      "size": 6498,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/chaoquanzi.md",
+      "size": 1786,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/chengqi.md",
+      "size": 4413,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/CHI_QUANT.md",
+      "size": 6436,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/CITADEL_SPECIAL.md",
+      "size": 8879,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/citadel.md",
+      "size": 2524,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/COMMODITY_GOLD_GUIDE.md",
+      "size": 5398,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/CREDIT_BOND_GUIDE.md",
+      "size": 4975,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/ctc.md",
+      "size": 1273,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/dayan.md",
+      "size": 1686,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/DD_STANDARD.md",
+      "size": 3663,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/DESHAW_SPECIAL.md",
+      "size": 9528,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/deshaw.md",
+      "size": 2434,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/dimensional.md",
+      "size": 1544,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/drw.md",
+      "size": 1273,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/eisler.md",
+      "size": 1640,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/exoduspoint.md",
+      "size": 1226,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/FICC_MACRO_FRAMEWORK.md",
+      "size": 5817,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/fiverings.md",
+      "size": 1280,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/FOREIGN_CN_MAP_V2.md",
+      "size": 4439,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/FOREIGN_CN_MAP.md",
+      "size": 3247,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/FX_GUIDE.md",
+      "size": 4961,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/GOLDEN_BULL_QUANT_AWARD_2011-2016.md",
+      "size": 8678,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/GOLDEN_BULL.md",
+      "size": 11145,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/gsa.md",
+      "size": 1530,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/gsr.md",
+      "size": 1336,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/hande.md",
+      "size": 1543,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/heiyi.md",
+      "size": 2016,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/HIGHFLYER_SPECIAL.md",
+      "size": 8629,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/highflyer.md",
+      "size": 7379,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/HK_FOREIGN_QUANT.md",
+      "size": 8416,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/honghu.md",
+      "size": 1556,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/hongxi.md",
+      "size": 1662,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/hrt.md",
+      "size": 1608,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/IC_IR_GUIDE.md",
+      "size": 5496,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/IMC_SPECIAL.md",
+      "size": 4275,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/imc.md",
+      "size": 1537,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/inshiman.md",
+      "size": 1480,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/JANE_STREET_SPECIAL.md",
+      "size": 4881,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/janestreet.md",
+      "size": 2648,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/jinhualun.md",
+      "size": 1977,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/joinquant.md",
+      "size": 2484,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/jumptrading.md",
+      "size": 2055,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/kaifeng.md",
+      "size": 1518,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/kuande.md",
+      "size": 4450,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/LDN_FOREIGN_QUANT.md",
+      "size": 8174,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/LINEAGE.md",
+      "size": 5203,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/lingjun.md",
+      "size": 4884,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/LISTED_QUANT.md",
+      "size": 5125,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/liyi.md",
+      "size": 1384,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/longqi.md",
+      "size": 2263,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/luoshu.md",
+      "size": 1652,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/mangroup.md",
+      "size": 1648,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/maoyuan.md",
+      "size": 1682,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/marshallwace.md",
+      "size": 1374,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/mengxi.md",
+      "size": 1409,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/METRICS_GUIDE.md",
+      "size": 5844,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/MILLENNIUM_SPECIAL.md",
+      "size": 4577,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/millennium.md",
+      "size": 1796,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/minghong.md",
+      "size": 6919,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/mingshi.md",
+      "size": 1935,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/ML_PORTFOLIO_GUIDE.md",
+      "size": 5744,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/MULTI_FACTOR_HISTORY.md",
+      "size": 6160,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/niankong.md",
+      "size": 1677,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/NYC_FOREIGN_QUANT.md",
+      "size": 7345,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/OFFICE_CN.md",
+      "size": 4367,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/OFFICE_GLOBAL.md",
+      "size": 5559,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/OPTIONS_GUIDE.md",
+      "size": 5995,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/OPTIVER_SPECIAL.md",
+      "size": 5029,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/optiver.md",
+      "size": 2416,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/P_RESEARCH_LINKUP.md",
+      "size": 4797,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/pansong.md",
+      "size": 2104,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/pdt.md",
+      "size": 1323,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/pingfanghe.md",
+      "size": 1397,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/POD_PLATFORM.md",
+      "size": 6047,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/POINT72_SPECIAL.md",
+      "size": 5292,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/point72.md",
+      "size": 1675,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/qianxiang.md",
+      "size": 2180,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/qianyi.md",
+      "size": 1442,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QRT_SPECIAL.md",
+      "size": 8462,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/qrt.md",
+      "size": 16373,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_AI.md",
+      "size": 3118,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_MAP_CN.md",
+      "size": 4019,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_MAP_GLOBAL.md",
+      "size": 4700,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_MAP_GREENWICH.md",
+      "size": 12328,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_MAP_LONDON.md",
+      "size": 12505,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_PEOPLE_CN.md",
+      "size": 4429,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_PEOPLE_GLOBAL.md",
+      "size": 5940,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_VENDORS_CN.md",
+      "size": 5426,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/QUANT_WORLD_MAP.md",
+      "size": 5460,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/RATES_BOND_GUIDE.md",
+      "size": 5788,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/RATES_BOND_LINKUP.md",
+      "size": 4570,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/README.md",
+      "size": 19454,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/REGULATION.md",
+      "size": 3935,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/RENAISSANCE_SPECIAL.md",
+      "size": 9926,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/rentec.md",
+      "size": 2035,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/ROADMAP.md",
+      "size": 1434,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/rokos.md",
+      "size": 1288,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/ruitian.md",
+      "size": 4393,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/schonfeld.md",
+      "size": 1437,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/SG_FOREIGN_QUANT.md",
+      "size": 8164,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/SHANGHAI_GRAVITY.md",
+      "size": 3332,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/shenyi.md",
+      "size": 1499,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/SHOWDOWN_CN_GLOBAL.md",
+      "size": 6445,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/SIG_SPECIAL.md",
+      "size": 8876,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/sig.md",
+      "size": 2030,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/SIGNATURES_CN.md",
+      "size": 5334,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/SIGNATURES_GLOBAL.md",
+      "size": 4349,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/sixie.md",
+      "size": 2115,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/squarepoint.md",
+      "size": 1585,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/STAR_PRODUCTS.md",
+      "size": 2887,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/TALENT_MAP.md",
+      "size": 3649,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/tengsheng.md",
+      "size": 1417,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/tianyan.md",
+      "size": 1392,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/TIMELINE.md",
+      "size": 3798,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/tower.md",
+      "size": 1317,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/tudor.md",
+      "size": 1457,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/TWOSIGMA_SPECIAL.md",
+      "size": 8917,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/twosigma.md",
+      "size": 1689,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/TYO_QUANT.md",
+      "size": 5496,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/UBIQUANT_SPECIAL.md",
+      "size": 8113,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/ubiquant.md",
+      "size": 6256,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/VERITION_SPECIAL.md",
+      "size": 10530,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/verition.md",
+      "size": 1532,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/virtu.md",
+      "size": 1738,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/VOL_SURFACE_GUIDE.md",
+      "size": 5615,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/wenbo.md",
+      "size": 1493,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/wintermute.md",
+      "size": 1395,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/winton.md",
+      "size": 1536,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/wolverine.md",
+      "size": 1233,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/WORLDQUANT_SPECIAL.md",
+      "size": 9021,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/worldquant.md",
+      "size": 1837,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/xiaoyong.md",
+      "size": 5265,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/xinhongtianhe.md",
+      "size": 1472,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/XTX_SPECIAL.md",
+      "size": 6255,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/xtx.md",
+      "size": 1378,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/yanfu.md",
+      "size": 6076,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/yansheng.md",
+      "size": 1905,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/yinnuo.md",
+      "size": 1960,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/yuansheng.md",
+      "size": 1360,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/zhichengzhuoyuan.md",
+      "size": 1959,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/zhixingtongda.md",
+      "size": 4346,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/zhuoshi.md",
+      "size": 1365,
+      "mode": 420
+    },
+    {
+      "path": "quant-history/zunjia.md",
+      "size": 1339,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/aqr.md",
+      "size": 1224,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/balyasny.md",
+      "size": 790,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/bridgewater.md",
+      "size": 1485,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/china-five.md",
+      "size": 1183,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/citadel.md",
+      "size": 1686,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/deshaw.md",
+      "size": 1566,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/fiverings.md",
+      "size": 881,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/gsa.md",
+      "size": 907,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/hrt.md",
+      "size": 1340,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/imc.md",
+      "size": 1158,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/janestreet.md",
+      "size": 2460,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/jumptrading.md",
+      "size": 1566,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/macro-legends-five.md",
+      "size": 1325,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/mangroup.md",
+      "size": 1205,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/market-making-crypto-five.md",
+      "size": 1260,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/millennium.md",
+      "size": 1239,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/optiver.md",
+      "size": 1753,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/point72.md",
+      "size": 1507,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/quiet-five.md",
+      "size": 1181,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/README.md",
+      "size": 3151,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/rentec.md",
+      "size": 1500,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/sig.md",
+      "size": 1283,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/squarepoint.md",
+      "size": 1267,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/systematic-europe-five.md",
+      "size": 1419,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/twosigma.md",
+      "size": 1241,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/virtu.md",
+      "size": 1253,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/worldquant.md",
+      "size": 1355,
+      "mode": 420
+    },
+    {
+      "path": "quant-repo/xtx.md",
+      "size": 914,
+      "mode": 420
+    },
+    {
+      "path": "rag/README.md",
+      "size": 578,
+      "mode": 420
+    },
+    {
+      "path": "skill/quant-release-cycle/SKILL.md",
+      "size": 1968,
+      "mode": 420
+    },
+    {
+      "path": "skill/quant-research/SKILL.md",
+      "size": 3038,
+      "mode": 420
+    },
+    {
+      "path": "skill/README.md",
+      "size": 4319,
+      "mode": 420
+    },
+    {
+      "path": "tool-use/README.md",
+      "size": 578,
+      "mode": 420
+    }
+  ],
+  "entryCount": 480,
+  "bundled": []
+}

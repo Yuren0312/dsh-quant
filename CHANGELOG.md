@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.91.1] - 2026-10-18
+
+Release candidate; npm publication remains pending. See
+[release delivery record](docs/maintenance/RELEASE-0.91.1-2026-10-18.md).
+
 ### Fixed
 - Complete the compatibility work contributed by **@hufeide** in #136 for
   DSH 0.2.1-rc.2 (reported by **@ziladan** in #139 / #140): declare
@@ -38,6 +43,8 @@ All notable changes to this project are documented here. The format follows
   suites against registry 0.2.0-rc.2 packages (227/227 pass), in addition to
   the 0.2.1-alpha.x line
 
+- Omit absent optional trade metrics from canonical JSON output, fixing
+  runtime execution of `quant_metrics` / `quant_research_pipeline` (#135/#138).
 - Correct Kupiec POF zero/all-exceedance likelihood boundaries, p-values and
   sample-dependent decisions in `quant_var_backtest` (#137). Reject non-finite
   inputs and invalid confidence; preserve finite numeric JSON output. Evaluate
@@ -47,6 +54,12 @@ All notable changes to this project are documented here. The format follows
 - Compatibility changes do not alter shipped `src/` math or tool behavior.
   #135/#138 and #137/#141 remain independently committed fixes.
   Validation does not imply an npm release.
+- Use 0.91.1 because the existing 0.91.0 tag/Release points to an earlier
+  source tree and its npm publish failed. Do not move or reuse that tag.
+- This package also carries the already committed documentation/research
+  updates since npm 0.90.0; no new quantitative tools or breaking API are added.
+- The release consumer check now accepts an exact registry package or tarball
+  and exercises 59 registrations plus all 56 deterministic tools.
 
 ## [0.91.0] - 2026-09-11
 

@@ -1,0 +1,23 @@
+# 0.91.1 candidate evidence
+
+Status: **locally verified release candidate; npm publication blocked**.
+
+- `audit.json`: registry/tag/release/CI inspection and original contribution lineage.
+- `validation.json`: one candidate package hash, build/types, 298 tests and four consumer results.
+- `pack.json`: complete npm package file manifest and integrity.
+- `logs.zip`: command output, with temporary workspace paths normalized (no credentials).
+
+| Pinned DSH cohort | Install / peers / real Loader / SMA | Registrations | Deterministic calls |
+| --- | --- | --- | --- |
+| 0.1.0-rc.6 | pass | 59 | 56/56 |
+| 0.2.0-rc.2 | pass | 59 | 56/56 |
+| 0.2.1-alpha.3 | pass | 59 | 56/56 |
+| 0.2.1-rc.2 | pass | 59 | 56/56 |
+
+Every row used the same local tarball recorded in `validation.json`. This does
+not claim registry installation. Raw logs explicitly identify `local-tarball`.
+The package can be recreated with `npm ci`, `npm run build`, and `npm pack
+--ignore-scripts`; this evidence directory is outside the npm files allowlist.
+
+For the blocking condition and exact registry verification commands see the
+[delivery record](../../docs/maintenance/RELEASE-0.91.1-2026-10-18.md).

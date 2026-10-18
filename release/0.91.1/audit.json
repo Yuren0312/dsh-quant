@@ -1,0 +1,81 @@
+{
+  "inspected_at": "2026-10-18T16:18:00+08:00",
+  "source_merge": "4d7e92371968941998bb6540c713d556a7dc7502",
+  "source_tree": "2ff0a7cf273043897bbe5c4f82b09aa327c59147",
+  "npm": {
+    "latest": "0.90.0",
+    "dist_tags": {
+      "latest": "0.90.0"
+    },
+    "last_publish": "2026-08-23T03:35:47.531Z",
+    "candidate": "0.91.1",
+    "candidate_exists": false
+  },
+  "existing_github_release": {
+    "tag": "v0.91.0",
+    "commit": "613a8633aaf53319afd86c8793b4ac4410e7682a",
+    "published_at": "2026-09-18T13:38:58Z",
+    "url": "https://github.com/pengpengyi92/dsh-quant/releases/tag/v0.91.0"
+  },
+  "failed_publish": {
+    "run": "https://github.com/pengpengyi92/dsh-quant/actions/runs/35351425247",
+    "jobs": [
+      {
+        "id": 105620233653,
+        "name": "publish",
+        "conclusion": "failure",
+        "failed_steps": [
+          "Run npm publish --access public"
+        ]
+      }
+    ],
+    "error_code": "E404",
+    "error": "Not Found - PUT https://registry.npmjs.org/dsh-quant; resource dsh-quant@0.91.0 could not be found or no permission",
+    "current_ci_credential_validity": "unknown"
+  },
+  "source_ci": {
+    "run": "https://github.com/pengpengyi92/dsh-quant/actions/runs/39095096509",
+    "jobs": [
+      {
+        "name": "test",
+        "conclusion": "success"
+      },
+      {
+        "name": "compatibility (0.2.1-alpha.3)",
+        "conclusion": "success"
+      },
+      {
+        "name": "compatibility (0.2.1-rc.2)",
+        "conclusion": "success"
+      },
+      {
+        "name": "compatibility (0.1.0-rc.6)",
+        "conclusion": "success"
+      },
+      {
+        "name": "compatibility (0.2.0-rc.2)",
+        "conclusion": "success"
+      }
+    ],
+    "post_merge_run": "https://github.com/pengpengyi92/dsh-quant/actions/runs/39095170375",
+    "post_merge_conclusion": "success"
+  },
+  "provenance": {
+    "reporter": "ziladan",
+    "issues": [
+      139,
+      140
+    ],
+    "contributor": "hufeide",
+    "original_pr": 136,
+    "original_head": "633ba45fa96063d0cc746c6618b28dfadba59908",
+    "is_ancestor_of_source_merge": true
+  },
+  "publication": {
+    "status": "blocked",
+    "local_npm_auth": "ENEEDAUTH",
+    "local_git_tag_push_auth": "unavailable",
+    "npm_publish_attempted_this_task": false,
+    "registry_consumer_verification": "not run; candidate absent"
+  }
+}

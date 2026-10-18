@@ -1,5 +1,12 @@
 # News
 
+## 0.91.1 candidate — 2026-10-18
+
+DSH 0.2.1-rc.2 compatibility, preserving three historical host cohorts.
+Includes separately merged metrics JSON and Kupiec POF fixes.
+Thanks to @hufeide for #136 and @ziladan for #139/#140.
+**npm publication pending**; see the [delivery record](docs/maintenance/RELEASE-0.91.1-2026-10-18.md).
+
 ## 0.16.0 — 2026-08-16
 
 **域驱动目录重构（PDAT→PET 映射）+ 多交易所 fallback**
