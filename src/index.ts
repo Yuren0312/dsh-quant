@@ -1966,8 +1966,8 @@ export function apply(ctx: Context) {
     isConcurrencySafe: () => true,
     async execute(args) {
       const equity = equityMetrics(args.equityCurve)
-      const trades = args.trades !== undefined ? tradeMetrics(args.trades) : undefined
-      return { ...equity, tradeMetrics: trades }
+      if (args.trades === undefined) return { ...equity }
+      return { ...equity, tradeMetrics: tradeMetrics(args.trades) }
     },
   }))
   ctx.tools.register(defineTool({
