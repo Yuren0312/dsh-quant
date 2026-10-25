@@ -12,7 +12,7 @@ const realFetch = globalThis.fetch
 /** 安装 mock fetch：返回 (url, init) 记录 + 可编程响应；返回恢复函数。 */
 function mockFetch(responder: (url: string, init?: RequestInit) => Response | Promise<Response>) {
   const calls: { url: string; init?: RequestInit }[] = []
-  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+  globalThis.fetch = (async (input: Parameters<typeof globalThis.fetch>[0], init?: RequestInit) => {
     const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url
     calls.push({ url, init })
     return responder(url, init)
@@ -66,7 +66,7 @@ test('fetchKlines: binance HTTP 非 2xx → 状态码 + body 截断', async () =
   try {
     await assert.rejects(
       fetchKlines('BTCUSDT', '1h', 1, signal()),
-      /market fetch failed for BTCUSDT 1h: HTTP 400 /,
+      { message: `market fetch failed for BTCUSDT 1h: HTTP 400 ${'x'.repeat(200)}` },
     )
   } finally { m.restore() }
 })
@@ -300,6 +300,47 @@ test('fetchKlines: yahoo 无 chart 数据 / 空 klines 报错', async () => {
     const m = mockFetch(() => json(body))
     try {
       await assert.rejects(fetchKlines('AAPL', '1d', 1, signal(), 'yahoo'), /yahoo fetch/)
+    } finally { m.restore() }
+  }
+})
+
+test('fetchKlines: shared provider network errors retain request context', async () => {
+  const providers = [
+    ['okx', 'BTCUSDT'], ['bybit', 'BTCUSDT'], ['sina', 'sh600000'],
+    ['tencent', 'sh600000'], ['yahoo', 'AAPL'],
+  ] as const
+  for (const [provider, symbol] of providers) {
+    const m = mockFetch(() => { throw new Error('ECONNRESET') })
+    try {
+      await assert.rejects(fetchKlines(symbol, '1d', 1, signal(), provider), {
+        message: `market fetch failed for ${symbol} 1d ${provider}: ECONNRESET`,
+      })
+      assert.equal(m.calls.length, 1)
+    } finally { m.restore() }
+  }
+})
+
+test('fetchKlines: shared provider HTTP errors truncate response bodies', async () => {
+  const m = mockFetch(() => new Response('x'.repeat(500), { status: 503 }))
+  try {
+    await assert.rejects(fetchKlines('BTCUSDT', '1h', 1, signal(), 'okx'), {
+      message: `market fetch failed for BTCUSDT 1h okx: HTTP 503 ${'x'.repeat(200)}`,
+    })
+  } finally { m.restore() }
+})
+
+test('fetchKlines: unreadable HTTP body preserves status for both fetch paths', async () => {
+  for (const provider of ['binance', 'okx'] as const) {
+    const m = mockFetch(async () => {
+      const response = new Response('already consumed', { status: 502 })
+      await response.text()
+      return response
+    })
+    try {
+      const label = provider === 'binance' ? 'BTCUSDT 1h' : 'BTCUSDT 1h okx'
+      await assert.rejects(fetchKlines('BTCUSDT', '1h', 1, signal(), provider), {
+        message: `market fetch failed for ${label}: HTTP 502 `,
+      })
     } finally { m.restore() }
   }
 })
